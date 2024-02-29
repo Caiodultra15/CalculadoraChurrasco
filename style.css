@@ -1,0 +1,179 @@
+:root {
+  --blue-nigth: #191970;
+  --blue-naval: #000080;
+  --text-color: #646363;
+  --bg-gray: #f6f6f7;
+}
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+main {
+  min-height: 100vh;
+  background-color: var(--bg-gray);
+  padding: 30px 0px;
+}
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin-inline: auto;
+}
+.titulo-principal {
+  color: var(--blue-nigth);
+  text-align: center;
+  font-weight: 900;
+  margin: 0;
+}
+.descricao-convidados {
+  color: var(--text-color);
+  text-align: center;
+}
+input[name="convidados"] {
+  display: block;
+  margin-inline: auto;
+}
+input {
+  border: solid 1px #d9d9d9;
+  border-radius: 5px;
+  padding: 10px;
+}
+input:focus {
+  border-color: #979797;
+  outline: none;
+}
+.blocos-editaveis,
+.campos-resposta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 50px;
+  padding: 30px 0;
+}
+.blocos-editaveis section {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+.blocos-editaveis h2 {
+  text-align: center;
+  color: var(--blue-naval);
+  font-weight: 900;
+}
+.campo-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.campo-form input {
+  max-width: 120px;
+}
+.campo-form label {
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+.btn-calcular {
+  all: unset;
+  margin: 20px auto;
+  display: block;
+  background-color: var(--blue-naval);
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  font-weight: 700;
+}
+.btn-calcular:hover {
+  transform: scale(1.03);
+}
+.resultado-section {
+  margin: 50px 0;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.titulo-secao {
+  padding: 20px 0;
+  text-align: center;
+  color: var(--blue-naval);
+  font-weight: 900;
+}
+.tabela {
+  width: 100%;
+  padding: 10px;
+  border-spacing: 0 10px;
+}
+.tabela th,
+.tabela td {
+  color: var(--text-color);
+  font-weight: 400;
+  text-align: start;
+  padding: 10px;
+}
+.tabela tr:nth-child(even) {
+  background-color: var(--bg-gray);
+}
+.campos-resposta {
+  align-items: baseline;
+}
+.tabela .valor-resposta {
+  font-weight: 700;
+}
+#resultado {
+  height: 0;
+  overflow: hidden;
+}
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 90%; /* Reduz a largura máxima do container para telas menores */
+    padding: 0 10px; /* Reduz o preenchimento lateral */
+  }
+
+  .blocos-editaveis,
+  .campos-resposta {
+    grid-template-columns: 1fr; /* Altera para uma coluna em telas menores */
+  }
+
+  .blocos-editaveis section {
+    margin-bottom: 20px; /* Adiciona espaço entre os blocos */
+  }
+
+  .campo-form {
+    flex-direction: column; /* Altera para uma coluna em telas menores */
+  }
+
+  .campo-form input {
+    max-width: none; /* Permite que os inputs ocupem toda a largura */
+    margin-bottom: 10px; /* Adiciona espaço entre os inputs */
+  }
+
+  .btn-calcular {
+    width: 50%; /* Faz o botão ocupar a largura total */
+    text-align: center;
+  }
+
+  .titulo-principal {
+    font-size: 24px; /* Reduz o tamanho do título principal */
+  }
+
+  .blocos-editaveis h2 {
+    font-size: 20px; /* Reduz o tamanho do título dos blocos */
+  }
+
+  .titulo-secao {
+    font-size: 20px; /* Reduz o tamanho do título das seções */
+  }
+
+  .tabela th,
+  .tabela td {
+    font-size: 14px; /* Reduz o tamanho do texto das tabelas */
+  }
+}
